@@ -22,11 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let m = MainViewController(nibName: nil, bundle: nil)
 
     // self.topWindow = UIWindow(frame:self.window!.frame)
-    self.topWindow = UIWindow(frame:UIScreen.mainScreen().bounds)
-    self.topWindow.backgroundColor = UIColor.blackColor()
-    self.topWindow.windowLevel = UIWindowLevelStatusBar
-    self.topWindow.rootViewController = m
-    self.topWindow.hidden = false
+    // self.topWindow = UIWindow(frame:UIScreen.mainScreen().bounds)
+    // self.topWindow.backgroundColor = UIColor.blackColor()
+    // self.topWindow.windowLevel = UIWindowLevelStatusBar
+    // self.topWindow.rootViewController = m
+    // self.topWindow.hidden = false
+    
+    
+    UINavigationBar.appearance().barTintColor = UIColor(red: 51.0/255.0, green: 66.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     
 
     self.window!.rootViewController = m

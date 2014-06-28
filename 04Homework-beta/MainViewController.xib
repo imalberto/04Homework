@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="accountButton" destination="3fA-Fz-2uE" id="jrd-X1-zRy"/>
                 <outlet property="composeButton" destination="5Cl-Yl-WfP" id="gSv-0p-fKG"/>
+                <outlet property="containerView" destination="kDB-8I-gmZ" id="Env-FS-NNS"/>
                 <outlet property="homeButton" destination="MDa-G8-bNf" id="76T-sp-QsE"/>
                 <outlet property="searchButton" destination="nVh-dq-hCU" id="xgJ-1I-46h"/>
                 <outlet property="tabBarView" destination="Xea-88-sIf" id="Cds-b9-Afw"/>
@@ -21,6 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" id="kDB-8I-gmZ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view opaque="NO" contentMode="scaleToFill" id="Xea-88-sIf">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
