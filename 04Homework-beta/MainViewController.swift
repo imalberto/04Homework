@@ -231,8 +231,9 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 //    resetUI()
 //    sender.selected = true
 //    self.currentView = self.composeVC.view
+
+//    if self.showBubble == false
 //    self.showBubble = true
-//    
 //    self.syncUI()
 
     self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical

@@ -10,6 +10,9 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+
+  @IBOutlet var nevermindButton: UIButton
+
   init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     // Custom initialization
@@ -19,7 +22,7 @@ class ComposeViewController: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor(red: 53/255, green: 70/255, blue: 91/255, alpha: 0.7)
+    self.view.backgroundColor = UIColor(red: 53/255, green: 70/255, blue: 91/255, alpha: 0.9)
   }
 
   override func didReceiveMemoryWarning() {
@@ -37,5 +40,12 @@ class ComposeViewController: UIViewController {
     // Pass the selected object to the new view controller.
   }
   */
+
+
+  @IBAction func onNevermind(sender: UIButton) {
+    NSLog("onNevermind")
+    
+    self.dismissModalViewControllerAnimated(true)
+  }
 
 }
