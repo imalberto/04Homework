@@ -7,7 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="_4Homework_beta" customModuleProvider="target">
             <connections>
+                <outlet property="chatButton" destination="4YY-ce-cpQ" id="1nO-ER-8De"/>
+                <outlet property="linkButton" destination="hLY-O6-qVE" id="cMG-DU-UBK"/>
                 <outlet property="nevermindButton" destination="0tu-mU-gpn" id="cgG-Kh-12p"/>
+                <outlet property="photoButton" destination="0co-cc-JVr" id="X33-gJ-RWv"/>
+                <outlet property="quoteButton" destination="CGO-YD-yum" id="3Kj-s8-ILZ"/>
+                <outlet property="textButton" destination="6Ki-3g-zqJ" id="wkN-4k-PHd"/>
+                <outlet property="videoButton" destination="HFF-AQ-4fe" id="4j8-t1-Qah"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

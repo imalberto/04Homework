@@ -177,7 +177,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
   @IBAction func onCompose(sender: UIButton) {
     NSLog("onCompose")
     
-    self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+    self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
     self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
     self.presentViewController(self.composeVC, animated: true, completion: {(Void) -> Void in
     })
