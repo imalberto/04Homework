@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // Do any additional setup after loading the view.
     self.emailTextField.delegate = self
     self.loginButton.enabled = false
-    self.view.backgroundColor = UIColor.clearColor()
+    self.view.backgroundColor = UIColor(red: 53/255, green: 70/255, blue: 91/255, alpha: 0.9)
     self.imageView.backgroundColor = UIColor.clearColor()
 
     self.emailTextField.becomeFirstResponder()
@@ -52,9 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
   @IBAction func onCancel(sender: UIButton) {
     NSLog("onCancel")
-    
     self.view.endEditing(true)
-    
     self.dismissModalViewControllerAnimated(true)
   }
 
@@ -65,6 +63,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
     return true
   }
-
-
 }

@@ -16,8 +16,8 @@ Week 4 Homework
     - (✓) Tapping "Log in" from the Home page should show the login form.
     - (✓) Compose button should show the various post buttons without animation.
 - Optional:
-    - Try to imitate the animation effect of the real app.
-    - Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
+    - (✓) Try to imitate the animation effect of the real app.
+    - (✓) Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
 
 #### Walkthrough
 

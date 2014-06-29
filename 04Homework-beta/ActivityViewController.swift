@@ -23,7 +23,6 @@ class ActivityViewController: UIViewController {
     let titleView = UIImageView(image: UIImage(named: "activity-title-view"))
     self.navigationItem.titleView = titleView
     self.navigationController.navigationBar.barTintColor = UIColor(red: 68/255, green: 84/255, blue: 103/255, alpha: 1)
-
   }
 
   override func didReceiveMemoryWarning() {

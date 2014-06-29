@@ -44,7 +44,6 @@ class ComposeViewController: UIViewController {
 
   @IBAction func onNevermind(sender: UIButton) {
     NSLog("onNevermind")
-    
     self.dismissModalViewControllerAnimated(true)
   }
 

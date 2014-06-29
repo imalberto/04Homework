@@ -10,25 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 
-  var tapGestureRecognizer: UITapGestureRecognizer!
-  var bubbleImageView: UIImageView!
-//  let startXY: CGPoint = CGPointMake(100, 490)
-//  let endXY: CGPoint = CGPointMake(100, 500)
-  let startXY: CGPoint = CGPointMake(100, -35)
-  let endXY: CGPoint = CGPointMake(100, -25)
-  var xyTop: Bool = true
-  var showBubble: Bool = true
-//  var canvas: UIView!
-
-  var currentView: UIView!
-  var homeNC: UINavigationController!
-  var homeVC: HomeViewController!
-  var accountVC: AccountViewController!
-  var searchVC: SearchViewController!
-  var activityVC: ActivityViewController!
-  var activityNC: UINavigationController!
-  var composeVC: ComposeViewController!
-
   @IBOutlet var tabBarView: UIView
   @IBOutlet var homeButton: UIButton
   @IBOutlet var searchButton: UIButton
@@ -47,14 +28,14 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     self.homeNC.navigationBar.translucent = false
     
     self.searchVC = SearchViewController(nibName: nil, bundle: nil)
+    
+    self.composeVC = ComposeViewController(nibName: nil, bundle: nil)
+
     self.accountVC = AccountViewController(nibName: nil, bundle: nil)
     
     self.activityVC = ActivityViewController(nibName: nil, bundle: nil)
     self.activityNC = UINavigationController(rootViewController: activityVC)
     self.activityNC.navigationBar.translucent = false
-    
-    self.composeVC = ComposeViewController(nibName: nil, bundle: nil)
-    
   }
 
   override func viewDidLoad() {
@@ -62,25 +43,14 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.clearColor()
+
     self.containerView.backgroundColor = UIColor.clearColor()
 
     self.tabBarView.backgroundColor = UIColor(red: 51.0/255.0, green: 66.0/255.0, blue: 86.0/255.0, alpha: 1.0)
 
-//    self.canvas = UIView(frame: self.view.bounds)
-//    self.canvas.backgroundColor = UIColor.clearColor()
-//    self.canvas.userInteractionEnabled = false
-//    self.view.insertSubview(self.canvas, aboveSubview: self.tabBarView)
-    
     self.onHome(self.homeButton)
   }
   
-  override func viewWillAppear(animated: Bool)  {
-    super.viewWillAppear(animated)
-  }
-  override func viewWillDisappear(animated: Bool) {
-    super.viewWillDisappear(animated)
-  }
-
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -112,7 +82,6 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }, completion: {(Bool) -> Void in
         self.xyTop = !self.xyTop
         self.startAnimation()
-        // NSLog("bounce")
     })
   }
   
@@ -153,24 +122,22 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     self.containerView.addSubview(self.currentView)
-    // self.containerView.insertSubview(self.bubbleImageView, aboveSubview: self.currentView)
     
-    dispatch_once(&Token.token, {
-        self.bubbleImageView = UIImageView(image: UIImage(named: "search-bubble"))
-        self.bubbleImageView.alpha = 0
-        self.bubbleImageView.center = self.startXY
-        self.bubbleImageView.userInteractionEnabled = true
-        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onTap:")
-        self.tapGestureRecognizer.delegate = self
-        self.tapGestureRecognizer.numberOfTapsRequired = 1
-        self.bubbleImageView.addGestureRecognizer(self.tapGestureRecognizer)
+    dispatch_once(&Token.token) {
+      self.bubbleImageView = UIImageView(image: UIImage(named: "search-bubble"))
+      self.bubbleImageView.alpha = 0
+      self.bubbleImageView.center = self.startXY
+      self.bubbleImageView.userInteractionEnabled = true
+      self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onTap:")
+      self.tapGestureRecognizer.delegate = self
+      self.tapGestureRecognizer.numberOfTapsRequired = 1
+      self.bubbleImageView.addGestureRecognizer(self.tapGestureRecognizer)
 
-        // self.canvas.addSubview(self.bubbleImageView)
-        self.tabBarView.addSubview(self.bubbleImageView)
+      self.tabBarView.addSubview(self.bubbleImageView)
+      self.tabBarView.userInteractionEnabled = true
 
-        self.tabBarView.userInteractionEnabled = true
-        self.startAnimation()
-    })
+      self.startAnimation()
+    }
     
   
     var alpha:CGFloat = 1.0
@@ -184,9 +151,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     
     UIView.animateWithDuration(0.2, animations: {
       self.bubbleImageView.alpha = alpha
-    }, completion: { (Bool) -> Void in
-       // NSLog("done")
-    })
+    }, completion: nil)
   }
 
   @IBAction func onHome(sender: UIButton) {
@@ -196,17 +161,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     sender.selected = true
     self.currentView = homeNC.view
     self.showBubble = true
-
     self.syncUI()
-//    self.containerView.addSubview(homeNC.view)
-//    // lazy load
-//    if self.bubbleImageView.superview == nil {
-//      self.bubbleImageView.center = startXY
-//      self.containerView.insertSubview(self.bubbleImageView, aboveSubview: homeNC.view)
-//    }
-//
-//    self.showBubble = true
-//    self.syncUI()
   }
 
   @IBAction func onSearch(sender: UIButton) {
@@ -216,27 +171,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     sender.enabled = true
     self.currentView = self.searchVC.view
     self.showBubble = false
-
     self.syncUI()
-    
-//    self.showBubble = false
-//    self.syncUI()
-//    sender.selected = true
-//    self.containerView.addSubview(self.searchVC.view)
-    
   }
 
   @IBAction func onCompose(sender: UIButton) {
     NSLog("onCompose")
     
-//    resetUI()
-//    sender.selected = true
-//    self.currentView = self.composeVC.view
-
-//    if self.showBubble == false
-//    self.showBubble = true
-//    self.syncUI()
-
     self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
     self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
     self.presentViewController(self.composeVC, animated: true, completion: {(Void) -> Void in
@@ -250,7 +190,6 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     sender.selected = true
     self.currentView = self.accountVC.view
     self.showBubble = true
-    
     self.syncUI()
     
   }
@@ -262,14 +201,25 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     sender.selected = true
     self.currentView = self.activityNC.view
     self.showBubble = true
-    
     self.syncUI()
-
   }
+  var tapGestureRecognizer: UITapGestureRecognizer!
+  var bubbleImageView: UIImageView!
+  let startXY: CGPoint = CGPointMake(100, -35)
+  let endXY: CGPoint = CGPointMake(100, -25)
+  var xyTop: Bool = true
+  var showBubble: Bool = true
+  
+  var currentView: UIView!
+  var homeNC: UINavigationController!
+  var homeVC: HomeViewController!
+  var accountVC: AccountViewController!
+  var searchVC: SearchViewController!
+  var activityVC: ActivityViewController!
+  var activityNC: UINavigationController!
+  var composeVC: ComposeViewController!
 }
 
 protocol TabBarControllerDelegate : NSObjectProtocol {
-  
   func tabBar(tabBar: MainViewController, didSelectViewController: UIViewController) -> Void
-
 }
