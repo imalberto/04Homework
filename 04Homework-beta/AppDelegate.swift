@@ -13,13 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
   var topWindow: UIWindow!
+  var _mainVC: MainViewController!
+  var mainVC: MainViewController {
+    get{
+      return _mainVC
+    }
+  }
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
     self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
     // Override point for customization after application launch.
 
-    let m = MainViewController(nibName: nil, bundle: nil)
+    _mainVC = MainViewController(nibName: nil, bundle: nil)
 
     // self.topWindow = UIWindow(frame:self.window!.frame)
     // self.topWindow = UIWindow(frame:UIScreen.mainScreen().bounds)
@@ -31,11 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     UINavigationBar.appearance().barTintColor = UIColor(red: 51.0/255.0, green: 66.0/255.0, blue: 86.0/255.0, alpha: 1.0)
     UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
+    self.window!.rootViewController = _mainVC
     
+    // self.window!.rootViewController = LoginViewController(nibName: nil, bundle: nil)
 
-    self.window!.rootViewController = m
-
-    self.window!.backgroundColor = UIColor.whiteColor()
+    self.window!.backgroundColor = UIColor.clearColor()
     self.window!.makeKeyAndVisible()
     return true
   }

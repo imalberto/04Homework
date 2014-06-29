@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  04Homework-beta
+//  04Homework-be3a
 //
 //  Created by albertoc on 6/28/14.
 //  Copyright (c) 2014 AC. All rights reserved.
@@ -34,6 +34,14 @@ class HomeViewController: UIViewController {
     // Do any additional setup after loading the view.
     self.scrollView.backgroundColor = UIColor(red: 51/255, green: 70/255, blue: 93/255, alpha: 1)
   }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -53,6 +61,22 @@ class HomeViewController: UIViewController {
   
   func onLogin(sender: UIBarButtonItem) {
     NSLog("Login")
+    
+//    let rootVC = self.view.window!.rootViewController
+//    rootVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+//    rootVC.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+//
+//    let loginVC = LoginViewController(nibName: nil, bundle: nil)
+//
+//    rootVC.presentViewController(loginVC, animated: true, completion: {
+//        NSLog("Done")
+//    })
+
+//    self.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+//    self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+//    self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+    let loginVC = LoginViewController(nibName: nil, bundle: nil)
+    self.presentModalViewController(loginVC, animated: true)
   }
 
 }
