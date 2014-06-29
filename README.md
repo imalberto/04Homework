@@ -4,7 +4,7 @@ Week 4 Homework
 
 #### How many hours to complete ?
 
-    10 Hrs
+    15 Hrs
 
 #### Which required and optional stories have been completed ?
 
