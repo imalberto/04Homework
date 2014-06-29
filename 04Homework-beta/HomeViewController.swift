@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  var mainVC: MainViewController!
 
   @IBOutlet var scrollView: UIScrollView
   @IBOutlet var imageView: UIImageView
@@ -76,7 +77,10 @@ class HomeViewController: UIViewController {
 //    self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
 //    self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
     let loginVC = LoginViewController(nibName: nil, bundle: nil)
-    self.presentModalViewController(loginVC, animated: true)
+    // self.presentModalViewController(loginVC, animated: true)
+    self.mainVC.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+    self.mainVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+    self.mainVC.presentViewController(loginVC, animated: true, completion: {})
   }
 
 }

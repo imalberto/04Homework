@@ -42,6 +42,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     // Custom initialization
     self.homeVC = HomeViewController(nibName: nil, bundle: nil)
+    self.homeVC.mainVC = self
     self.homeNC = UINavigationController(rootViewController: self.homeVC)
     self.homeNC.navigationBar.translucent = false
     
