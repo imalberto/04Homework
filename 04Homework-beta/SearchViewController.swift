@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  04Homework-beta
 //
 //  Created by albertoc on 6/28/14.
@@ -8,34 +8,23 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchViewController: UIViewController {
 
 
   @IBOutlet var scrollView: UIScrollView
   @IBOutlet var imageView: UIImageView
 
-
-
   init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     // Custom initialization
-
-    let titleImageView = UIImageView(image: UIImage(named: "tumblr-logo"))
-    self.navigationItem.titleView = titleImageView
-    
-    let loginImageView = UIImageView(image: UIImage(named: "login-button"))
-    let loginButton = UIBarButtonItem(customView: loginImageView)
-    loginButton.target = self
-    loginButton.action = "onLogin:"
-    self.navigationItem.rightBarButtonItem = loginButton
-    
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    self.scrollView.backgroundColor = UIColor(red: 51/255, green: 70/255, blue: 93/255, alpha: 1)
+    self.scrollView.contentSize = self.imageView.image.size
+    self.view.backgroundColor = UIColor(red: 51/255, green: 70/255, blue: 93/255, alpha: 1)
   }
 
   override func didReceiveMemoryWarning() {
@@ -53,9 +42,5 @@ class HomeViewController: UIViewController {
     // Pass the selected object to the new view controller.
   }
   */
-  
-  func onLogin(sender: UIBarButtonItem) {
-    NSLog("Login")
-  }
 
 }

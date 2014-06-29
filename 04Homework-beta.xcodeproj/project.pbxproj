@@ -13,6 +13,10 @@
 		C31F385D195F64AE001FB455 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F385B195F64AE001FB455 /* MainViewController.xib */; };
 		C31F3860195F7B5C001FB455 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F385E195F7B5C001FB455 /* HomeViewController.swift */; };
 		C31F3861195F7B5C001FB455 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F385F195F7B5C001FB455 /* HomeViewController.xib */; };
+		C31F3864195F8AEA001FB455 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F3862195F8AEA001FB455 /* SearchViewController.swift */; };
+		C31F3865195F8AEA001FB455 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F3863195F8AEA001FB455 /* SearchViewController.xib */; };
+		C31F3868195F90B8001FB455 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F3866195F90B8001FB455 /* AccountViewController.swift */; };
+		C31F3869195F90B8001FB455 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F3867195F90B8001FB455 /* AccountViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		C31F385B195F64AE001FB455 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		C31F385E195F7B5C001FB455 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C31F385F195F7B5C001FB455 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		C31F3862195F8AEA001FB455 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C31F3863195F8AEA001FB455 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		C31F3866195F90B8001FB455 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C31F3867195F90B8001FB455 /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,11 @@
 				C307C1A7195E5381005578E5 /* AppDelegate.swift */,
 				C31F385E195F7B5C001FB455 /* HomeViewController.swift */,
 				C31F385F195F7B5C001FB455 /* HomeViewController.xib */,
+				C31F3862195F8AEA001FB455 /* SearchViewController.swift */,
+				C31F3863195F8AEA001FB455 /* SearchViewController.xib */,
 				C307C1A9195E5381005578E5 /* Images.xcassets */,
+				C31F3866195F90B8001FB455 /* AccountViewController.swift */,
+				C31F3867195F90B8001FB455 /* AccountViewController.xib */,
 				C307C1A5195E5381005578E5 /* Supporting Files */,
 				C31F385A195F64AE001FB455 /* MainViewController.swift */,
 				C31F385B195F64AE001FB455 /* MainViewController.xib */,
@@ -153,7 +165,9 @@
 			files = (
 				C307C1AA195E5381005578E5 /* Images.xcassets in Resources */,
 				C31F385D195F64AE001FB455 /* MainViewController.xib in Resources */,
+				C31F3865195F8AEA001FB455 /* SearchViewController.xib in Resources */,
 				C31F3861195F7B5C001FB455 /* HomeViewController.xib in Resources */,
+				C31F3869195F90B8001FB455 /* AccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C307C1A8195E5381005578E5 /* AppDelegate.swift in Sources */,
+				C31F3868195F90B8001FB455 /* AccountViewController.swift in Sources */,
 				C31F385C195F64AE001FB455 /* MainViewController.swift in Sources */,
+				C31F3864195F8AEA001FB455 /* SearchViewController.swift in Sources */,
 				C31F3860195F7B5C001FB455 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

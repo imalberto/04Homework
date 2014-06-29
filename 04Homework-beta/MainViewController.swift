@@ -12,6 +12,9 @@ class MainViewController: UIViewController {
 
   var homeNC: UINavigationController!
   var homeVC: HomeViewController!
+  var accountVC: AccountViewController!
+  
+  var searchVC: SearchViewController!
 
   @IBOutlet var tabBarView: UIView
   @IBOutlet var homeButton: UIButton
@@ -29,6 +32,8 @@ class MainViewController: UIViewController {
     self.homeNC = UINavigationController(rootViewController: self.homeVC)
     self.homeNC.navigationBar.translucent = false
     
+    searchVC = SearchViewController(nibName: nil, bundle: nil)
+    accountVC = AccountViewController(nibName: nil, bundle: nil)
   }
 
   override func viewDidLoad() {
@@ -36,6 +41,8 @@ class MainViewController: UIViewController {
 
     // Do any additional setup after loading the view.
     self.tabBarView.backgroundColor = UIColor(red: 51.0/255.0, green: 66.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+    
+    self.onHome(self.homeButton)
   }
 
   override func didReceiveMemoryWarning() {
@@ -68,7 +75,8 @@ class MainViewController: UIViewController {
       b.selected = false
     }
     
-    self.homeNC.view.removeFromSuperview()
+//    self.homeNC.view.removeFromSuperview()
+//    self.searchVC.view.removeFromSuperview()
   }
 
   @IBAction func onHome(sender: UIButton) {
@@ -85,6 +93,7 @@ class MainViewController: UIViewController {
     
     resetUI()
     sender.selected = true
+    self.containerView.addSubview(searchVC.view)
   }
 
   @IBAction func onCompose(sender: UIButton) {
@@ -99,6 +108,7 @@ class MainViewController: UIViewController {
     
     resetUI()
     sender.selected = true
+    self.containerView.addSubview(self.accountVC.view)
   }
 
   @IBAction func onTrend(sender: UIButton) {
