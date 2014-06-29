@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ActivityViewController.swift
 //  04Homework-beta
 //
 //  Created by albertoc on 6/28/14.
@@ -8,31 +8,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-
-  @IBOutlet var scrollView: UIScrollView
-  @IBOutlet var imageView: UIImageView
-
-
+class ActivityViewController: UIViewController {
 
   init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     // Custom initialization
 
-    let titleImageView = UIImageView(image: UIImage(named: "tumblr-logo"))
-    self.navigationItem.titleView = titleImageView
-    
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log in", style: UIBarButtonItemStyle.Done, target: self, action: "onLogin:")
-    self.navigationItem.rightBarButtonItem.tintColor = UIColor.lightGrayColor()
-    
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    self.scrollView.backgroundColor = UIColor(red: 51/255, green: 70/255, blue: 93/255, alpha: 1)
+    let titleView = UIImageView(image: UIImage(named: "activity-title-view"))
+    self.navigationItem.titleView = titleView
+    self.navigationController.navigationBar.barTintColor = UIColor(red: 68/255, green: 84/255, blue: 103/255, alpha: 1)
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -50,9 +41,5 @@ class HomeViewController: UIViewController {
     // Pass the selected object to the new view controller.
   }
   */
-  
-  func onLogin(sender: UIBarButtonItem) {
-    NSLog("Login")
-  }
 
 }

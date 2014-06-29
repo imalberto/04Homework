@@ -13,8 +13,9 @@ class MainViewController: UIViewController {
   var homeNC: UINavigationController!
   var homeVC: HomeViewController!
   var accountVC: AccountViewController!
-  
   var searchVC: SearchViewController!
+  var activityVC: ActivityViewController!
+  var activityNC: UINavigationController!
 
   @IBOutlet var tabBarView: UIView
   @IBOutlet var homeButton: UIButton
@@ -34,6 +35,10 @@ class MainViewController: UIViewController {
     
     searchVC = SearchViewController(nibName: nil, bundle: nil)
     accountVC = AccountViewController(nibName: nil, bundle: nil)
+    
+    activityVC = ActivityViewController(nibName: nil, bundle: nil)
+    activityNC = UINavigationController(rootViewController: activityVC)
+    activityNC.navigationBar.translucent = false
   }
 
   override func viewDidLoad() {
@@ -116,6 +121,7 @@ class MainViewController: UIViewController {
     
     resetUI()
     sender.selected = true
+    self.containerView.addSubview(self.activityNC.view)
   }
 
 

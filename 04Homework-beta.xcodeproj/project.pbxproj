@@ -17,6 +17,8 @@
 		C31F3865195F8AEA001FB455 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F3863195F8AEA001FB455 /* SearchViewController.xib */; };
 		C31F3868195F90B8001FB455 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F3866195F90B8001FB455 /* AccountViewController.swift */; };
 		C31F3869195F90B8001FB455 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F3867195F90B8001FB455 /* AccountViewController.xib */; };
+		C31F386C195F97E8001FB455 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F386A195F97E8001FB455 /* ActivityViewController.swift */; };
+		C31F386D195F97E8001FB455 /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31F386B195F97E8001FB455 /* ActivityViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C31F3863195F8AEA001FB455 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		C31F3866195F90B8001FB455 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		C31F3867195F90B8001FB455 /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		C31F386A195F97E8001FB455 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		C31F386B195F97E8001FB455 /* ActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 			children = (
 				C307C1A7195E5381005578E5 /* AppDelegate.swift */,
 				C31F385E195F7B5C001FB455 /* HomeViewController.swift */,
+				C31F386A195F97E8001FB455 /* ActivityViewController.swift */,
+				C31F386B195F97E8001FB455 /* ActivityViewController.xib */,
 				C31F385F195F7B5C001FB455 /* HomeViewController.xib */,
 				C31F3862195F8AEA001FB455 /* SearchViewController.swift */,
 				C31F3863195F8AEA001FB455 /* SearchViewController.xib */,
@@ -166,6 +172,7 @@
 				C307C1AA195E5381005578E5 /* Images.xcassets in Resources */,
 				C31F385D195F64AE001FB455 /* MainViewController.xib in Resources */,
 				C31F3865195F8AEA001FB455 /* SearchViewController.xib in Resources */,
+				C31F386D195F97E8001FB455 /* ActivityViewController.xib in Resources */,
 				C31F3861195F7B5C001FB455 /* HomeViewController.xib in Resources */,
 				C31F3869195F90B8001FB455 /* AccountViewController.xib in Resources */,
 			);
@@ -179,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C307C1A8195E5381005578E5 /* AppDelegate.swift in Sources */,
+				C31F386C195F97E8001FB455 /* ActivityViewController.swift in Sources */,
 				C31F3868195F90B8001FB455 /* AccountViewController.swift in Sources */,
 				C31F385C195F64AE001FB455 /* MainViewController.swift in Sources */,
 				C31F3864195F8AEA001FB455 /* SearchViewController.swift in Sources */,
